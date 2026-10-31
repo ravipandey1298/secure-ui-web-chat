@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@theme {
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+:root {
+  color-scheme: light;
+}
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #17253e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button,
+input,
+select,
+textarea,
+a {
+  outline-offset: 4px;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid #60a5fa;
+}
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-[0_2px_8px_0_#152b4d03];
+  }
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 disabled:hover:bg-blue-600;
+  }
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50;
+  }
+  .field {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3.5 py-3 text-slate-800 placeholder:text-slate-400;
+  }
+  .label {
+    @apply mb-2 block text-sm font-semibold text-slate-600;
+  }
+  .eyebrow {
+    @apply text-[11px] font-bold tracking-[0.16em] text-slate-400 uppercase;
+  }
+}
